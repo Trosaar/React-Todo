@@ -15,10 +15,10 @@ import React from 'react';
 
 const TodoForm = props => {
   return (
-    <form>
-    <input type="text" placeholder="Task to add" name="task"/>
+    <form onSubmit={props.subm}>
+    <input type="text" placeholder="Task to add" name="task" value={props.listItem.task} onChange={props.change}/>
     <button type="submit">Add</button>
-    <button>Clear Completed</button>
+    <button typr="nothing">Clear Completed</button>
     </form>
   )
 }
