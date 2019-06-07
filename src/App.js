@@ -25,11 +25,30 @@ class App extends React.Component {
     });
   };
 
+  completeToggle = id => {
+    console.log("completeToggle:",id);
+    const taskChecker = this.state.runList.map(task => {
+      if (task.id === id) {
+          console.log('task:',task);
+          // const newObj = {
+          //   ...task,
+            task.completed = !task.completed
+          // };
+          return task;
+        } else {
+          return task
+        }
+
+        this.setState({runList: taskChecker})
+      }
+    );
+  };
+
   render() {
     return (
       <div>
         <h2>Todo List:</h2>
-        <TodoList listItem={this.state.runList} />
+        <TodoList listItem={this.state.runList} done={this.completeToggle}/>
         <TodoForm addTask={this.addNewTask}/>
       </div>
     );
