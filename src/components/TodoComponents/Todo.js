@@ -1,9 +1,10 @@
 import React from 'react';
 
-let Todo = [{
-  task: 'something',
-  id: Date.now(),
-  completed: false
-}];
+const Todo = props => {
+  console.log('Todo:',props);
+  return (
+    <div>{props.listItem.task}</div>
+  );
+};
 
 export default Todo;
